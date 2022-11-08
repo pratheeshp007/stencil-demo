@@ -11,6 +11,8 @@ export const config: Config = {
     react({
       componentCorePackage: 'stencil-demo-1',
       proxiesFile: '../stencil-demo-1-react/src/components/stencil-generated/index.ts',
+      includeImportCustomElements: true,
+      customElementsDir: 'dist/components'
     }),
     {
       type:'dist'

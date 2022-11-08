@@ -4,14 +4,16 @@ import { reactOutputTarget as react } from '@stencil/react-output-target';
 export const config: Config = {
   namespace: 'stencil-demo-2',
   outputTargets: [
-    {type: 'dist'},
+    { type: 'dist' },
     {
       type: 'dist-custom-elements',
-      externalRuntime: true
+      externalRuntime: true,
     },
     react({
       componentCorePackage: 'stencil-demo-2',
       proxiesFile: '../stencil-demo-2-react/src/components/stencil-generated/index.ts',
+      includeImportCustomElements: true,
+      customElementsDir: 'dist/components'
     }),
     {
       type: 'www',
